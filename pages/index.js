@@ -1,12 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Client } from "@notionhq/client";
 import slugify from "slugify";
+
+import { getDatabase, getBlocks } from "../lib/notion";
+import { Fragment } from "react";
+import { renderBlock } from "../components/renderBlock";
+
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-export default function Home({ posts }) {
-  console.log(posts)
+export default function Home({ posts, introBlocks }) {
+  console.log(introBlocks)
   return (
     <>
       <Head>
@@ -14,39 +18,50 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <section>
+          {introBlocks.map((block) => (
+            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+          ))}
+        </section>
         <h2>All Posts</h2>
-        {posts.map((post) => (
-          post.properties.published.checkbox === true && 
-          <p key={post.id}>
-            <Link href={`/${slugify(post.properties.name.title[0].plain_text).toLocaleLowerCase()}`}>
-              {post.properties.name.title[0].plain_text}
-            </Link>
-          </p>
-        ))}
+        {posts.map((post) => {
+
+          const p = post.properties;
+
+          if (p.published.checkbox === false) return false
+
+          if (p.external.checkbox === true) {
+            return (
+              <p key={post.id}>
+                <a href={p.link.url} target="_blank">{p.name.title[0].plain_text}</a>
+              </p>
+            )
+          }
+
+          return (
+            <p key={post.id}>
+              <Link href={`/${slugify(p.name.title[0].plain_text).toLocaleLowerCase()}`}>
+                {p.name.title[0].plain_text}
+              </Link>
+            </p>
+            )
+          })}
       </main>
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const notion = new Client({
-      auth: process.env.NOTION_TOKEN,
-  })
-
-  const getDatabase = async (databaseId) => {
-    const response = await notion.databases.query({
-      database_id: databaseId,
-    });
-    return response.results;
-  };
 
   const data = await getDatabase(databaseId);
 
-  const posts = []
+  const introBlocks = await getBlocks(process.env.INTRO_PAGE_ID);
 
   return {
     props: {
       posts: data,
-    }
+      introBlocks: introBlocks
+    },
+    revalidate: 1
   }
 }
