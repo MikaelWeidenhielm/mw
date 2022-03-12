@@ -7,10 +7,9 @@ import { Fragment } from "react";
 import { renderBlock } from "../components/renderBlock";
 
 
-export const databaseId = process.env.NOTION_DATABASE_ID;
+export const databaseId = process.env.MW_DB_ID;
 
 export default function Home({ posts, introBlocks }) {
-  console.log(introBlocks)
   return (
     <>
       <Head>

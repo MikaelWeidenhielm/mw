@@ -4,9 +4,10 @@ import { renderBlock } from "../components/renderBlock";
 
 import slugify from "slugify";
 
-export const databaseId = process.env.NOTION_DATABASE_ID;
+export const databaseId = process.env.MW_DB_ID;
 
 export default function Post({ title, blocks }) {
+
   if (!blocks || !title ) {
     return <div />
   }
@@ -37,6 +38,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ( {params: { slug } } ) => {
+
     // fetch details for post
     const data = await getDatabase(databaseId);
 
