@@ -1,10 +1,9 @@
 import { Fragment } from "react";
-import { Text } from "./text.js";
+import { Text } from "./text/text.js";
 
 export const renderBlock = (block) => {
     const { type, id } = block;
     const value = block[type];
-  
     switch (type) {
       case "table":
         return (
@@ -13,6 +12,11 @@ export const renderBlock = (block) => {
           </p>
       );
       case "paragraph":
+        //if the block is empty, render a linebreak
+        if(value.rich_text.length <= 0) {
+          return <br />
+        }
+        
         return (
           <p>
             <Text text={value.rich_text} />

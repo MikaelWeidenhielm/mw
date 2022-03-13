@@ -1,32 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 body {
-  background-color: white;
-  color: black;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: rgb(24, 24, 31);
-    color: rgb(238, 238, 238);
-  }
+  @apply bg-default text-neutral antialiased
 }
 
 a {
-  color: #2563eb;
-  text-decoration: none;
+  @apply underline
 }
 
 * {
   box-sizing: border-box;
-}
-
-h1 {
-  font-weight: 800;
 }

@@ -5,48 +5,58 @@ import slugify from "slugify";
 import { getDatabase, getBlocks } from "../lib/notion";
 import { Fragment } from "react";
 import { renderBlock } from "../components/renderBlock";
+import Logo from "../components/logo";
+import Layout from "../components/layout";
 
 
 export const databaseId = process.env.MW_DB_ID;
 
 export default function Home({ posts, introBlocks }) {
   return (
-    <>
+    <Layout>
       <Head>
-        <title>Notion Next.js blog</title>
+        <title>Mikael Weidenhielm</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div className="py-lg lg:pt-100">
+        <Logo />
+      </div>
+
       <main>
-        <section>
+        <section className="max-w-screen-sm">
           {introBlocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </section>
-        <h2>All Posts</h2>
+        <h1>Resources</h1>
         {posts.map((post) => {
 
           const p = post.properties;
 
-          if (p.published.checkbox === false) return false
+          if (p.published.checkbox === false) return
 
           if (p.external.checkbox === true) {
             return (
-              <p key={post.id}>
+              <p className="py-sm" key={post.id}>
                 <a href={p.link.url} target="_blank">{p.name.title[0].plain_text}</a>
+                <p>{p.description.rich_text[0].plain_text}</p>
               </p>
             )
           }
 
           return (
-            <p key={post.id}>
+            <div className="py-sm" key={post.id}>
+              {/* {p.external.checkbox} */}
               <Link href={`/${slugify(p.name.title[0].plain_text).toLocaleLowerCase()}`}>
                 {p.name.title[0].plain_text}
               </Link>
-            </p>
+              <p>{p.description.rich_text[0].plain_text}</p>
+            </div>
             )
           })}
       </main>
-    </>
+    </Layout>
   );
 }
 
