@@ -25,7 +25,7 @@ export default function Home({ posts, introBlocks }) {
           ))}
         </section>
         <section className="pb-md">
-          <h2 className="font-medium font-medium pb-sm text-subtle">Resources</h2>
+          <h2 className="font-medium pb-sm text-subtle">Resources</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               if (post.properties.postType.select.name === "writing") return
@@ -36,7 +36,7 @@ export default function Home({ posts, introBlocks }) {
           </div>
         </section>
         <section>
-          <h2 className="font-medium font-medium pb-sm text-subtle">Writing</h2>
+          <h2 className="font-medium pb-sm text-subtle">Writing</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               // console.log(post)
