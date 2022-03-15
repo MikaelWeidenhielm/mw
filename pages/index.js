@@ -19,13 +19,13 @@ export default function Home({ posts, introBlocks }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <section className="pb-md">
+        <section className="pb-lg">
           {introBlocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </section>
-        <section className="pb-md">
-          <h2 className="font-medium pb-sm text-subtle">Resources</h2>
+        <section className="pb-lg">
+          <h2 className="w-full font-base pb-xs text-subtle">Resources</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               if (post.properties.postType.select.name === "writing") return
@@ -36,10 +36,9 @@ export default function Home({ posts, introBlocks }) {
           </div>
         </section>
         <section>
-          <h2 className="font-medium pb-sm text-subtle">Writing</h2>
+          <h2 className="w-full font-base pb-xs text-subtle">Writing</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
-              // console.log(post)
               if (post.properties.postType.select.name === "resource") return
               return (
                 <Post data={post} />

@@ -3,6 +3,7 @@ import { getDatabase, getBlocks } from "../lib/notion";
 import { renderBlock } from "../components/renderBlock";
 
 import slugify from "slugify";
+import Layout from "../components/layout";
 
 export const databaseId = process.env.MW_DB_ID;
 
@@ -12,18 +13,15 @@ export default function Post({ title, blocks }) {
     return <div />
   }
   return (
-    <>
+    <Layout title={title}>
       <main>
-        <h1>
-          <p>{title}</p>
-        </h1>
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </section>
       </main>
-    </>
+    </Layout>
   );
 }
 

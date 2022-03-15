@@ -1,0 +1,13 @@
+.heading_lg {
+    @apply 
+        font-bold
+        text-lg
+        text-neutral;
+}
+
+.heading_sm {
+    @apply 
+        font-bold
+        text-md
+        text-neutral;
+}

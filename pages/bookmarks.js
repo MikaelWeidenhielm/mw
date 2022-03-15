@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Forward from "../components/icon/Forward";
+import Forward from "../components/icon/forward";
 import Layout from "../components/layout";
 
 import { getDatabase } from "../lib/notion";
@@ -22,7 +22,7 @@ export default function Bookmarks({ bookmarks }) {
                 <div className="w-full flex items-center">
                     <img className="h-[15px] w-[15px] rounded" src={`http://www.google.com/s2/favicons?domain=${b.url.url}`} alt="favicon" />
                     <p className="w-full font-medium pl-sm">{b.bookmark.title[0].plain_text}</p>
-                    <Forward width={20} height={20} />
+                    <Forward width={16} height={16} />
                 </div>
                 <div className="w-full flex">
                     <p className="pl-md w-1/2 font-light text-sm text-subtle truncate">{b.url.url}</p>

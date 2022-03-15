@@ -5,3 +5,7 @@
 .strokeColor {
     @apply stroke-inverse
 }
+
+.strokeSubtle {
+    @apply stroke-neutral
+}

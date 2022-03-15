@@ -6,11 +6,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        'sans': ["Inter", ...defaultTheme.fontFamily.sans]
-      }
-    },
     spacing: {
       '0': '0px',
       px: '1px',
@@ -30,7 +25,9 @@ module.exports = {
       'lg': '800px',
     },
     fontSize: {
-      default: "16px",
+      lg: "28px",
+      md: "22px",
+      base: "16px",
       sm: "14px",
     },
     colors: {
@@ -45,9 +42,6 @@ module.exports = {
       neutral: "#333",
       subtle: "#555",
       inverse: "#fff",
-    },
-    letterSpacing: {
-      normal: '-0.18px'
     },
     borderRadius: {
       DEFAULT: '5px',

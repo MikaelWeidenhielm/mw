@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { Text } from "./text/text.js";
+import { Text } from "../text/text";
+import s from "./block.module.css"
 
 export const renderBlock = (block) => {
     const { type, id } = block;
@@ -11,7 +11,7 @@ export const renderBlock = (block) => {
             <Text text={value.rich_text} />
           </p>
       );
-      case "paragraph":
+      case ("paragraph" || "heading_1 || heading_2"):
         //if the block is empty, render a linebreak
         if(value.rich_text.length <= 0) {
           return <br />
@@ -23,20 +23,15 @@ export const renderBlock = (block) => {
           </p>
       );
       case "heading_1":
-        return (
-          <h1>
-            <Text text={value.rich_text} />
-          </h1>
-      );
       case "heading_2":
         return (
-          <h2>
+          <h2 className={s.heading_lg}>
             <Text text={value.rich_text} />
           </h2>
       );
       case "heading_3":
         return (
-          <h3>
+          <h3 className={s.heading_sm}>
             <Text text={value.rich_text} />
           </h3>
       );
@@ -47,28 +42,6 @@ export const renderBlock = (block) => {
             <Text text={value.rich_text} />
           </li>
       );
-      case "to_do":
-        return (
-          <div>
-            <label htmlFor={id}>
-              <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-              <Text text={value.rich_text} />
-            </label>
-          </div>
-      );
-      case "toggle":
-        return (
-          <details>
-            <summary>
-              <Text text={value.rich_text} />
-            </summary>
-            {value.children?.map((block) => (
-              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-            ))}
-          </details>
-      );
-      case "child_page":
-        return <p>{value.title}</p>;
       case "image":
         const src = value.type === "external" ? value.external.url : value.file.url;
         const caption = value.caption.length < 0 ? value.caption[0].plain_text : "";
