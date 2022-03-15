@@ -1,5 +1,5 @@
 .bold {
-    font-weight: 500;
+    @apply font-medium text-default;
   }
   
   .code {

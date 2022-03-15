@@ -1,0 +1,52 @@
+.dropdown {
+    @apply 
+        absolute
+        w-200
+        bg-default
+        border 
+        border-subtle
+        shadow rounded
+        right-0
+        mr-sm
+        mt-xs
+        lg:mr-[75px]
+        py-sm
+        flex
+        flex-col
+        items-start;
+}
+
+.dropdown > p {
+    @apply 
+        w-full
+        px-sm
+        py-xs
+        font-light
+        text-subtle
+        text-sm;
+}
+
+.dropdown > button {
+    @apply
+        py-xs
+        hover:bg-subtle;
+}
+
+.inactive {
+    @apply
+        px-md
+        w-full
+        text-left
+        /* font-light */
+        text-subtle;
+}
+
+.active {
+    @apply
+        px-[10px]
+        w-full
+        flex
+        items-center
+        text-default
+        font-medium;
+}

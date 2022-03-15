@@ -1,0 +1,7 @@
+.fillColor {
+    @apply fill-inverse
+}
+
+.strokeColor {
+    @apply stroke-inverse
+}
