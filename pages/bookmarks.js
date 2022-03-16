@@ -17,6 +17,7 @@ export default function Bookmarks({ bookmarks }) {
             return (
               <a href={b.url.url}
                  target="_blank"
+                 rel="noreferrer"
                  key={b.url.id}
                  className="w-full flex flex-col p-sm rounded hover:bg-subtle dark:hover:bg-inverse_subtle transition-all">
                 <div className="w-full flex items-center">

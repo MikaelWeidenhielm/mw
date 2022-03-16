@@ -11,7 +11,8 @@ export default function Post({ data }) {
     if (p.external.checkbox) {
         return (
             <a className={`${s.link} py-sm pr-lg sm:w-full lg:w-1/2`}
-                href={p.link.url} 
+                href={p.link.url}
+                rel="noreferrer"
                 target="_blank"
                 >
                     <h2 className="font-medium text-default dark:text-inverse pb-xs">{p.name.title[0].plain_text}</h2>

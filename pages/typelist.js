@@ -32,7 +32,9 @@ export default function Typelist({ fonts }) {
                    className="flex justify-between pb-md">
                 <a className="w-[180px] pr-sm font-medium text-default dark:text-inverse underline"
                     href={font.url.url}
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer"
+                    >
                       {font.font.title[0].plain_text}
                 </a>
                 <p className="pr-sm text-right font-light">{font.style.select.name}</p>
