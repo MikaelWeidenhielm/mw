@@ -29,8 +29,12 @@ export const getStaticPaths = async () => {
 
     const data = await getDatabase(databaseId);
 
+    const filteredPaths = data.filter((page) => !page.properties.isCustom.checkbox && !page.properties.external.checkbox)
+
+    const paths = filteredPaths.map((page) => ({ params: { slug: slugify(page.properties.name.title[0].plain_text, {lower: true}) } }))
+
     return {
-        paths: data.map((page) => ({ params: { slug: slugify(page.properties.name.title[0].plain_text).toLocaleLowerCase() } })),
+        paths: paths,
         fallback: false,
       };
 }
