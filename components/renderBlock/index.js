@@ -51,6 +51,13 @@ export const renderBlock = (block) => {
             {caption && <figcaption>{caption}</figcaption>}
           </figure>
       );
+      case "bookmark":
+      const url = value.url
+        return (
+          <figure>
+            <img className="rounded" src={url} alt={"image"} />
+          </figure>
+        );
       default:
         return `❌ Unsupported block (${
           type === "unsupported" ? "unsupported by Notion API" : type
