@@ -10,9 +10,9 @@ export default function Dropdown({ setFilter, filterType }) {
 
     useOnClickOutside(ref, () => toggleVisible(false));
 
-    useEffect(() => {
-        toggleVisible(false)
-      }, [filterType])
+    // useEffect(() => {
+    //     toggleVisible(false)
+    //   }, [filterType])
 
     return (
         <div ref={ref}>

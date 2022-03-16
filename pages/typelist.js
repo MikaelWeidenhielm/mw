@@ -21,7 +21,6 @@ export default function Typelist({ fonts }) {
   }, [filterType, fonts])
 
   return (
-    // <Layout title={"Typelist"} filter={true} setFilter={() => setFilterType({style: "serif", price: filterType.price })}>
     <Layout title={"Typelist"} filter={true} setFilter={setFilterType} filterType={filterType}>
       <Head>
         <title>Typelist</title>
@@ -31,18 +30,16 @@ export default function Typelist({ fonts }) {
             return (
               <div key={font.font.title[0].plain_text}
                    className="flex justify-between pb-md">
-                <a className="w-[180px] pr-sm font-medium underline">{font.font.title[0].plain_text}</a>
+                <a className="w-[180px] pr-sm font-medium text-default dark:text-inverse underline"
+                    href={font.url.url}
+                    target="_blank">
+                      {font.font.title[0].plain_text}
+                </a>
                 <p className="pr-sm text-right font-light">{font.style.select.name}</p>
                 <p className="text-right font-light">{font.price.select.name}</p>
               </div>
             )
           })}
-          <p onClick={() => setFilterType({style: filterType.style, price: "all"})}>all prices</p>
-          <p onClick={() => setFilterType({style: filterType.style, price: "free" })}>free fonts</p>
-          <p onClick={() => setFilterType({style: filterType.style, price: "paid" })}>paid fonts</p>
-          <p onClick={() => setFilterType({style: "all", price: filterType.price})}>all styles</p>
-          <p onClick={() => setFilterType({style: "serif", price: filterType.price })}>serif fonts</p>
-          <p onClick={() => setFilterType({style: "sans", price: filterType.price })}>sans fonts</p>
     </Layout>
   );
 }
@@ -61,6 +58,6 @@ export const getStaticProps = async () => {
     props: {
       fonts: fonts,
     },
-    revalidate: 1
+    revalidate: 60
   }
 }

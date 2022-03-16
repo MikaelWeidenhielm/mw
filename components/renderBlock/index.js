@@ -47,7 +47,7 @@ export const renderBlock = (block) => {
         const caption = value.caption.length < 0 ? value.caption[0].plain_text : "";
         return (
           <figure>
-            <img src={src} alt={caption} />
+            <img className="rounded" src={src} alt={caption} />
             {caption && <figcaption>{caption}</figcaption>}
           </figure>
       );

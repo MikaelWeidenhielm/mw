@@ -1,0 +1,3 @@
+.link:hover > h2 {
+    @apply underline;
+}

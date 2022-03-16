@@ -25,7 +25,7 @@ export default function Home({ posts, introBlocks }) {
           ))}
         </section>
         <section className="pb-lg">
-          <h2 className="w-full font-base pb-xs text-subtle">Resources</h2>
+          <h2 className="w-full font-base pb-xs text-subtle dark:text-inverse_subtle">Resources</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               if (post.properties.postType.select.name === "writing") return
@@ -36,7 +36,7 @@ export default function Home({ posts, introBlocks }) {
           </div>
         </section>
         <section>
-          <h2 className="w-full font-base pb-xs text-subtle">Writing</h2>
+          <h2 className="w-full font-base pb-xs text-subtle dark:text-inverse_subtle">Writing</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               if (post.properties.postType.select.name === "resource") return
@@ -62,6 +62,6 @@ export const getStaticProps = async () => {
       posts: data,
       introBlocks: introBlocks
     },
-    revalidate: 1
+    revalidate: 60
   }
 }

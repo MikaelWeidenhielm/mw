@@ -2,12 +2,20 @@
     @apply 
         font-bold
         text-lg
-        text-neutral;
+        text-default;
+}
+
+:global(.dark) .heading_lg {
+    @apply text-inverse;
 }
 
 .heading_sm {
     @apply 
-        font-bold
-        text-md
-        text-neutral;
+    font-bold
+    text-md
+    text-default;
+}
+
+:global(.dark) .heading_sm {
+    @apply text-inverse;
 }

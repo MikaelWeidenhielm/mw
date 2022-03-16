@@ -62,7 +62,7 @@ export const getStaticProps = async ( {params: { slug } } ) => {
             id: block.id,
             children: await getBlocks(block.id),
           };
-        })
+        })  
     );
     const blocksWithChildren = blocks.map((block) => {
       // Add child blocks if the block should contain children but none exists
@@ -79,6 +79,6 @@ export const getStaticProps = async ( {params: { slug } } ) => {
             title: page.properties.name.title[0].plain_text,
             blocks: blocksWithChildren
         },
-        revalidate: 1
+        revalidate: 60
     }
 }

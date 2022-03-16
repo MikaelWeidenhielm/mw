@@ -18,14 +18,14 @@ export default function Bookmarks({ bookmarks }) {
               <a href={b.url.url}
                  target="_blank"
                  key={b.url.id}
-                 className="w-full flex flex-col p-sm rounded hover:bg-subtle transition-all">
+                 className="w-full flex flex-col p-sm rounded hover:bg-subtle dark:hover:bg-inverse_subtle transition-all">
                 <div className="w-full flex items-center">
                     <img className="h-[15px] w-[15px] rounded" src={`http://www.google.com/s2/favicons?domain=${b.url.url}`} alt="favicon" />
-                    <p className="w-full font-medium pl-sm">{b.bookmark.title[0].plain_text}</p>
+                    <p className="w-full font-medium text-default dark:text-inverse pl-sm">{b.bookmark.title[0].plain_text}</p>
                     <Forward width={16} height={16} />
                 </div>
                 <div className="w-full flex">
-                    <p className="pl-md w-1/2 font-light text-sm text-subtle truncate">{b.url.url}</p>
+                    <p className="pl-md w-1/2 font-light text-sm text-neutral truncate">{b.url.url}</p>
                 </div>
               </a>
             )
@@ -48,6 +48,6 @@ export const getStaticProps = async () => {
     props: {
       bookmarks: bookmarks,
     },
-    revalidate: 1
+    revalidate: 60
   }
 }

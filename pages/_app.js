@@ -1,17 +1,11 @@
 import '../styles/globals.css'
-import Head from 'next/head'
+import { ThemeProvider } from 'next-themes'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-         {/* <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
-            rel="stylesheet"
-          />
-        </Head> */}
+    <ThemeProvider enableSystem={true} attribute="class">
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 

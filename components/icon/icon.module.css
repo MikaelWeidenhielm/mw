@@ -1,11 +1,19 @@
 .fillColor {
-    @apply fill-inverse
+    @apply fill-inverse;
+}
+
+:global(.dark) .fillColor {
+    @apply fill-default;
 }
 
 .strokeColor {
-    @apply stroke-inverse
+    @apply stroke-inverse;
+}
+
+:global(.dark) .strokeColor {
+    @apply stroke-default;
 }
 
 .strokeSubtle {
-    @apply stroke-neutral
+    @apply stroke-neutral;
 }

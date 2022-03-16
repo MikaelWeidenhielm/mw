@@ -16,14 +16,22 @@
         items-start;
 }
 
+:global(.dark) .dropdown {
+    @apply bg-inverse border-inverse_subtle;
+}
+
 .dropdown > p {
     @apply 
         w-full
         px-sm
         py-xs
         font-light
-        text-subtle
+        text-neutral
         text-sm;
+}
+
+:global(.dark) .dropdown > p {
+    @apply text-inverse_subtle;
 }
 
 .dropdown > button {
@@ -32,13 +40,20 @@
         hover:bg-subtle;
 }
 
+:global(.dark) .dropdown > button {
+    @apply hover:bg-inverse_subtle;
+}
+
 .inactive {
     @apply
         px-md
         w-full
         text-left
-        /* font-light */
-        text-subtle;
+        text-neutral;
+}
+
+:global(.dark) .inactive {
+    @apply text-subtle;
 }
 
 .active {
@@ -49,4 +64,8 @@
         items-center
         text-default
         font-medium;
+}
+
+:global(.dark) .active {
+    @apply text-inverse;
 }

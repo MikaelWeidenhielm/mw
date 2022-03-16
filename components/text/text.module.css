@@ -1,12 +1,9 @@
 .bold {
     @apply font-medium text-default;
   }
-  
-  .code {
-    font-family: monospace;
-    background-color: rgb(242, 242, 242);
-    padding: 2px 4px;
-    border-radius: 2px;
+
+  :global(.dark) .bold {
+    @apply text-inverse;
   }
   
   .italic {

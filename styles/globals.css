@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  @apply font-sans bg-default text-neutral;
+  @apply font-sans bg-default text-neutral dark:bg-inverse dark:text-subtle antialiased;
 }
 
 * {

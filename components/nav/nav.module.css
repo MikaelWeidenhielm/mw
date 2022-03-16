@@ -18,3 +18,7 @@
         bg-default_transparent
         backdrop-blur;
 }
+
+:global(.dark) .header {
+    @apply bg-inverse_transparent;
+}
