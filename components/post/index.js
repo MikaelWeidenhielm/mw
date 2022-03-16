@@ -11,7 +11,6 @@ export default function Post({ data }) {
     if (p.external.checkbox) {
         return (
             <a className={`${s.link} py-sm pr-lg sm:w-full lg:w-1/2`}
-                key={data.id}
                 href={p.link.url} 
                 target="_blank"
                 >
@@ -21,14 +20,12 @@ export default function Post({ data }) {
         )
     } else {
         return (
-            <>
-                <Link key={data.id} href={`/${slugify(p.name.title[0].plain_text).toLocaleLowerCase()}`}>
-                    <a className={`${s.link} py-sm pr-lg sm:w-full lg:w-1/2`}>
-                        <h2 className="font-medium text-default dark:text-inverse pb-xs">{p.name.title[0].plain_text}</h2>
-                        <p>{p.description.rich_text[0].plain_text}</p>
-                    </a>
-                </Link>
-            </>
+            <Link href={`/${slugify(p.name.title[0].plain_text).toLocaleLowerCase()}`}>
+                <a className={`${s.link} py-sm pr-lg sm:w-full lg:w-1/2`}>
+                    <h2 className="font-medium text-default dark:text-inverse pb-xs">{p.name.title[0].plain_text}</h2>
+                    <p>{p.description.rich_text[0].plain_text}</p>
+                </a>
+            </Link>
         )
     }
 }

@@ -12,6 +12,7 @@ export const Text = ({ text }) => {
         
         return (
             <span
+              key={text.content}
               className={[
                 bold ? styles.bold : "",
                 code ? styles.code : "",

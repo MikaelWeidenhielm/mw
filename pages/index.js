@@ -10,7 +10,6 @@ import Post from "../components/post";
 export const databaseId = process.env.MW_DB_ID;
 
 export default function Home({ posts, introBlocks }) {
-  const writings = posts.filter((post) => post.properties.type);
 
   return (
     <Layout>
@@ -25,23 +24,23 @@ export default function Home({ posts, introBlocks }) {
           ))}
         </section>
         <section className="pb-lg">
-          <h2 className="w-full font-base pb-xs text-subtle dark:text-inverse_subtle">Resources</h2>
+          <h2 className="w-full font-medium pb-xs text-subtle dark:text-inverse_subtle">Resources</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               if (post.properties.postType.select.name === "writing") return
               return (
-                <Post data={post} />
+                <Post key={post.id} data={post} />
               )
             })}
           </div>
         </section>
         <section>
-          <h2 className="w-full font-base pb-xs text-subtle dark:text-inverse_subtle">Writing</h2>
+          <h2 className="w-full font-medium pb-xs text-subtle dark:text-inverse_subtle">Writing</h2>
           <div className="flex flex-col flex-wrap lg:flex-row">
             {posts.map((post) => {
               if (post.properties.postType.select.name === "resource") return
               return (
-                <Post data={post} />
+                <Post key={post.id} data={post} />
               )
             })}
           </div>
