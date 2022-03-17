@@ -13,7 +13,7 @@ export default function Post({ title, blocks }) {
   }
 
   return (
-    <Layout title={title}>
+    <Layout title={title} navigation={true}>
       <main>
         <section>
           {blocks.map((block) => (

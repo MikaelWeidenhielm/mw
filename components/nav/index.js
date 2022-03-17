@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 import Sun from "../icon/sun";
 import Moon from "../icon/moon";
 
-export default function Nav({title, filter, setFilter, filterType}) {
+export default function Nav({title, navigation, filter, setFilter, filterType}) {
   const { systemTheme, theme, setTheme} = useTheme()
   const [mounted, setMounted] = useState(false);
 
@@ -38,10 +38,10 @@ export default function Nav({title, filter, setFilter, filterType}) {
 
     return (
       <header className={s.header}>
-        {title && <IconBtn type="back" />}          
+        {navigation && <IconBtn type="back" />}          
         <Logo height={30} width={30} />
         {renderThemeChanger()}
-        {title && (
+        {navigation && (
             <>
                 <div className="basis-full" />
                 <div className="w-full flex items-center justify-between pt-md">

@@ -7,7 +7,7 @@ export const databaseId = process.env.BOOKMARK_DB_ID;
 
 export default function Bookmarks({ bookmarks }) {
   return (
-    <Layout title={"Bookmarks"}>
+    <Layout title={"Bookmarks"} navigation={true}>
       {bookmarks.map((b) => {
         return (
           <a href={b.url.url}

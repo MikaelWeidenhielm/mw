@@ -20,7 +20,7 @@ export default function Typelist({ fonts }) {
   }, [filterType, fonts])
 
   return (
-    <Layout title={"Typelist"} filter={true} setFilter={setFilterType} filterType={filterType}>
+    <Layout title={"Typelist"} filter={true} navigation={true} setFilter={setFilterType} filterType={filterType}>
       {filteredFonts.map((font) => {
         return (
           <div key={font.font.title[0].plain_text}
