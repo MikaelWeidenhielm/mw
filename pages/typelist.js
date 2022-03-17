@@ -29,7 +29,7 @@ export default function Typelist({ fonts }) {
           {filteredFonts.map((font) => {
             return (
               <div key={font.font.title[0].plain_text}
-                   className="flex justify-between pb-md">
+                   className="flex justify-between pb-lg">
                 <a className="w-[180px] pr-sm font-medium text-default dark:text-inverse underline"
                     href={font.url.url}
                     target="_blank"
