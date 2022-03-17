@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useState, useEffect } from 'react';
 import Layout from "../components/layout";
 
@@ -22,26 +21,22 @@ export default function Typelist({ fonts }) {
 
   return (
     <Layout title={"Typelist"} filter={true} setFilter={setFilterType} filterType={filterType}>
-      <Head>
-        <title>Typelist</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-          {filteredFonts.map((font) => {
-            return (
-              <div key={font.font.title[0].plain_text}
-                   className="flex justify-between pb-lg">
-                <a className="w-[180px] pr-sm font-medium text-default dark:text-inverse underline"
-                    href={font.url.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    >
-                      {font.font.title[0].plain_text}
-                </a>
-                <p className="pr-sm text-right font-light first-letter:capitalize">{font.style.select.name}</p>
-                <p className="text-right font-light first-letter:capitalize">{font.price.select.name}</p>
-              </div>
-            )
-          })}
+      {filteredFonts.map((font) => {
+        return (
+          <div key={font.font.title[0].plain_text}
+               className="flex justify-between pb-lg">
+            <a className="w-[180px] pr-sm font-medium text-default dark:text-inverse underline"
+                href={font.url.url}
+                target="_blank"
+                rel="noreferrer"
+                >
+                  {font.font.title[0].plain_text}
+            </a>
+            <p className="pr-sm text-right font-light first-letter:capitalize">{font.style.select.name}</p>
+            <p className="text-right font-light first-letter:capitalize">{font.price.select.name}</p>
+          </div>
+        )
+      })}
     </Layout>
   );
 }

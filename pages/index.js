@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import { getDatabase, getBlocks } from "../lib/notion";
 import { Fragment } from "react";
 import { renderBlock } from "../components/renderBlock";
@@ -12,11 +10,7 @@ export const databaseId = process.env.MW_DB_ID;
 export default function Home({ posts, introBlocks }) {
 
   return (
-    <Layout>
-      <Head>
-        <title>Mikael Weidenhielm</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title={"Mikael Weidenhielm"}>
       <div>
         <section className="pb-lg">
           {introBlocks.map((block) => (

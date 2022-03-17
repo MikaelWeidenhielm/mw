@@ -12,6 +12,7 @@ export default function Post({ title, blocks }) {
   if (!blocks || !title ) {
     return <div />
   }
+
   return (
     <Layout title={title}>
       <main>
