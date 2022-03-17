@@ -8,7 +8,6 @@ import Layout from "../components/layout";
 export const databaseId = process.env.MW_DB_ID;
 
 export default function Post({ title, blocks }) {
-
   if (!blocks || !title ) {
     return <div />
   }
