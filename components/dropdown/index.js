@@ -38,6 +38,12 @@ export default function Dropdown({ setFilter, filterType }) {
                             {filterType.style === "serif" && <div className="mr-xs"><Check width={15} height={15}/></div>}
                             Serif
                     </button>
+                    <button
+                        className={filterType.style === "mono" ?  s.active : s.inactive}
+                        onClick={() => setFilter({style: "mono", price: filterType.price})}>
+                            {filterType.style === "mono" && <div className="mr-xs"><Check width={15} height={15}/></div>}
+                            Mono
+                    </button>
                     <p>Price</p>
                     <button
                         className={filterType.price === "all" ?  s.active : s.inactive}
