@@ -32,8 +32,8 @@ export default function Typelist({ fonts }) {
                 >
                   {font.font.title[0].plain_text}
             </a>
-            <p className="pr-sm text-right font-light text-neutral first-letter:capitalize">{font.style.select.name}</p>
-            <p className="text-right font-light text-neutral first-letter:capitalize">{font.price.select.name}</p>
+            <p className="pr-sm text-right font-light text-neutral dark:text-inverse_neutral first-letter:capitalize">{font.style.select.name}</p>
+            <p className="text-right font-light text-neutral dark:text-inverse_neutral first-letter:capitalize">{font.price.select.name}</p>
           </div>
         )
       })}
