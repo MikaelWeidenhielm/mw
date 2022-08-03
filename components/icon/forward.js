@@ -6,7 +6,7 @@ export default function Forward({ width, height }) {
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
-        className={s.strokeSubtle}
+        className={s.strokeNeutral}
         fill="none"
         viewBox="0 0 20 20"
       >

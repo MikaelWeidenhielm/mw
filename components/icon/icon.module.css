@@ -15,5 +15,26 @@
 }
 
 .strokeSubtle {
-    @apply stroke-neutral;
+    @apply stroke-subtle;
 }
+
+:global(.dark) .strokeSubtle {
+    @apply stroke-inverse_subtle;
+}
+
+.strokeNeutral {
+    @apply stroke-neutral transition-all;
+}
+
+a:hover div .strokeNeutral {
+    @apply stroke-inverse;
+}
+
+:global(.dark) .strokeNeutral {
+    @apply stroke-inverse_neutral;
+}
+
+:global(.dark) a:hover div .strokeNeutral {
+    @apply stroke-default;
+}
+

@@ -25,9 +25,8 @@
         w-full
         px-sm
         py-xs
-        font-light
-        text-neutral
-        text-sm;
+        text-subtle
+        text-xs;
 }
 
 :global(.dark) .dropdown > p {
@@ -53,7 +52,7 @@
 }
 
 :global(.dark) .inactive {
-    @apply text-subtle;
+    @apply text-inverse_neutral;
 }
 
 .active {

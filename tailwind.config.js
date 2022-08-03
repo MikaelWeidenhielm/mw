@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -5,6 +7,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",  
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        'serif': [ 'Lora', ...defaultTheme.fontFamily.serif ],
+      },
+    },
     spacing: {
       '0': '0px',
       px: '1px',
@@ -17,6 +24,7 @@ module.exports = {
       '90': '90px',
       '100': '100px',
       '200': '200px',
+      '300': '300px',
       'full': '100%',
     },
     screens: {
@@ -24,27 +32,36 @@ module.exports = {
       'lg': '800px',
     },
     fontSize: {
-      lg: "28px",
-      md: "22px",
-      base: "16px",
-      sm: "14px",
+      xl: "48px",
+      lg: "36px",
+      md: "24px",
+      base: "18px",
+      sm: "16px",
+      xs: "14px",
     },
     colors: {
-      default_transparent: "rgba(250,250,252, 0.5)",
-      default: "#FAFAFC",
-      neutral: "#656567",
-      subtle: "#E6E6E6",
-      inverse_subtle: "#333333",
-      inverse: "#1B1B1B",
-      inverse_transparent: "rgba(27,27,27,0.5)",
+      default_transparent: "rgba(252, 252, 255, 0.5)",
+      inverse_transparent: "rgba(24,24,26,0.5)",
+      
+      default: "#FCFCFF",
+      inverse: "#18181A",
+
+      neutral: "#E1E1E6",
+      inverse_neutral: "#313133",
+
+      subtle: "#F0F0F5",
+      inverse_subtle: "#252526",
+      
     },
     textColor: {
-      default: "#1B1B1B",
-      neutral: "#656567",
-      subtle: "#BEBEC0",
-      iverse_neutral: "#d9d9d9",
-      inverse_subtle: "#555555",
-      inverse: "#FAFAFC",
+      default: "#252526",
+      inverse: "#F0F0F5",
+      neutral: "#58585C",
+      inverse_neutral: "#B4B4B8",
+      subtle: "#6D6D70",
+      inverse_subtle: "#8B8B8F",
+      disabled: "#B4B4B8",
+      inverse_disabled: "#58585C",
     },
     borderRadius: {
       DEFAULT: '5px',

@@ -1,5 +1,4 @@
 import { Text } from "../text/text";
-import s from "./block.module.css"
 
 export const renderBlock = (block) => {
     const { type, id } = block;
@@ -11,34 +10,30 @@ export const renderBlock = (block) => {
             <Text text={value.rich_text} />
           </p>
       );
-      case ("paragraph" || "heading_1 || heading_2"):
+      case ("paragraph" || "heading_1" || "heading_2"):
         //if the block is empty, render a linebreak
         if(value.rich_text.length <= 0) {
           return <br />
         }
-        
-        return (
-          <p>
-            <Text text={value.rich_text} />
-          </p>
-      );
+        else { 
+          return (
+            <p className="font-serif">
+              <Text text={value.rich_text} />
+            </p>
+          );
+        }
       case "heading_1":
       case "heading_2":
-        return (
-          <h2 className={s.heading_lg}>
-            <Text text={value.rich_text} />
-          </h2>
-      );
       case "heading_3":
         return (
-          <h3 className={s.heading_sm}>
+          <h2 className="text-md font-bold">
             <Text text={value.rich_text} />
-          </h3>
+          </h2>
       );
       case "bulleted_list_item":
       case "numbered_list_item":
         return (
-          <li>
+          <li className="font-serif">
             <Text text={value.rich_text} />
           </li>
       );
