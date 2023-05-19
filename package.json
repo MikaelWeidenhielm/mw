@@ -1,5 +1,5 @@
 {
-  "name": "mw",
+  "name": "home",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@notionhq/client": "1.0.2",
-    "autoprefixer": "10.4.2",
-    "next": "12.1.0",
-    "next-themes": "0.1.1",
-    "postcss": "8.4.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "slugify": "1.6.5",
-    "tailwindcss": "3.0.23"
-  },
-  "devDependencies": {
-    "eslint": "8.10.0",
-    "eslint-config-next": "12.1.0"
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
+    "gray-matter": "^4.0.3",
+    "next": "13.4.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2"
   }
 }
