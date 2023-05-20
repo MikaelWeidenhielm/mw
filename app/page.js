@@ -1,12 +1,15 @@
+import BossImg from "./components/BossImg"
 import Posts from "./components/Posts"
 
+export const revalidate = 10
 
 export default function Home() {
   return (
-    <main>
+    <div>
+      <BossImg />
      <p>hejhej!</p>
      <br />
      <Posts />
-    </main>
+    </div>
   )
 }
