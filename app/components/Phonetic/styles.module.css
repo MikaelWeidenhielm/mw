@@ -1,0 +1,14 @@
+.wrapper {
+    margin-left: 54px;
+}
+
+.arrow {
+    position: relative;
+    top: -2px;
+}
+
+.phonetic {
+    display: inline-block;
+    font-size: var(--body-sm);
+    color: var(--text-subtle);
+}
