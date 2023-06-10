@@ -1,5 +1,6 @@
 type Post = {
-    id: string,
-    title: string,
-    date: string,
-}
+	id: string;
+	title: string;
+	description: string;
+	date: string;
+};

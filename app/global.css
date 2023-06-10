@@ -1,25 +1,27 @@
 @import url(https://cdn.jsdelivr.net/gh/MikaelWeidenhielm/trinity-ui@latest/trinity.min.css);
 
 .mx-auto {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 body {
-    background: var(--background-default);
+	background: var(--background-default);
 }
 
-h1, h2 {
-    font-size: var(--heading-xs);
-    line-height: var(--leading-tight);
-    color: var(--text-default);
-    font-weight: 500;
+h1,
+h2 {
+	font-size: var(--heading-xs);
+	line-height: var(--leading-tight);
+	color: var(--text-default);
+	font-weight: 500;
 }
 
 p {
-    font-size: var(--body-md);
-    line-height: var(--leading-loosest);;
+	font-size: var(--body-md);
+	line-height: var(--leading-loosest);
+	color: var(--text-neutral);
 }
 
 a {
-    color: var(--text-default)
+	color: var(--text-neutral);
 }

@@ -1,5 +1,6 @@
 ---
 title: "d best scoob"
+description: "wher r u scoob doo?"
 date: "2023-05-25"
 ---
 
